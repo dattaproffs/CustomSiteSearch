@@ -23,7 +23,8 @@
 	color: #747474;
     overflow-y: scroll;
 	-webkit-animation-duration: .5s;
-  animation-duration: .5s;
+  	animation-duration: .5s;
+  	font-family: 'Circular Bold', Helvetica, sans-serif;
 }
 
 	.css-backdrop .loader {
