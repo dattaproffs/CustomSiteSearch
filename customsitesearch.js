@@ -10,7 +10,7 @@ var customSiteSearch = (function () {
 		placeholder: 'Search site',
 		background: '#f6f6f6;',
 		backgroundOpacity: '100',
-		animate: { open: 'slideInDown', close: 'slideOutUp' }, //Requires animate.css https://github.com/daneden/animate.css
+		animate: { open: '', close: '' }, //Requires animate.css https://github.com/daneden/animate.css
 		searchUrl: 'https://www.googleapis.com/customsearch/v1?key=[[apiKey]]&cx=[[searchEngineId]]&q='
 	};
 
@@ -22,9 +22,7 @@ var customSiteSearch = (function () {
 	//init
 	function init(options) {
 		extend(_settings, _settings, options);
-		console.log(_settings.searchUrl);
 		_settings.searchUrl =  _settings.searchUrl.replace('[[apiKey]]', _settings.apiKey).replace('[[searchEngineId]]', _settings.searchEngineId);
-		console.log(_settings.searchUrl);
 		bindOpenEvent();
 	}
 
@@ -35,7 +33,9 @@ var customSiteSearch = (function () {
 
 
 	function openSearch(e) {
-		e.preventDefault();
+		if(e !== undefined){
+			e.preventDefault();
+		}
 		if (_backdropEl instanceof Element) {
 			if (_settings.animate.open && _settings.animate.close) {
 				_backdropEl.className = _backdropEl.className.replace(_settings.animate.close, _settings.animate.open);
@@ -69,14 +69,14 @@ var customSiteSearch = (function () {
 	function makeSearch(searchString, userSearch) {
 		clearPreviusResults();
 		showLoader();
-		console.log(_settings.searchUrl + searchString);
+		
 		var request = new XMLHttpRequest();
 		request.open('GET', _settings.searchUrl + searchString, true);
 
 		request.onload = function () {
 			if (request.status >= 200 && request.status < 400) {
 				_currentSearch = JSON.parse(request.responseText);
-				console.log(_currentSearch);
+				
 				renderSearchResults(_currentSearch, searchString, userSearch);
 			} else {
 				alert('Sorry an error occured, status: ', request.status);

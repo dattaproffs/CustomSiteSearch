@@ -39,6 +39,10 @@ Add the following before your `</body>` tag
         });
     </script>
         
+Then you create a element with the id of `open-css` or an existing element and insert the id in the button property in settings object.
+
+Or if you wan't you can just call `customSiteSearch.open();` wherever you wan't.
+     
 
 
  
