@@ -110,8 +110,14 @@ ul#css-results {
 	width: 100%;
 }
 .css-result-item{
-    border-bottom: 1px dashed #747474;
+    border-bottom: 1px dashed #DEDDDD;
     padding:10px 0;
+}
+
+.css-result-item a{
+	color: #747474;
+    text-decoration: none;
+	font-weight: bold;
 }
 
 

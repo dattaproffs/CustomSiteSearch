@@ -47,6 +47,7 @@ TODO
 ==
 
 1. Fix the formatting on the search results.
+2. Fix paging of results
      
 
 
