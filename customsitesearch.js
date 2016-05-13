@@ -4,8 +4,8 @@ var customSiteSearch = (function () {
 	var _currentSearch = {};
 	var firstTime = true;
 	var _settings = {
-        apiKey: 'AIzaSyAGo4_uNuY5GO0dQrOotb4y_WbRtIMpLqQ', //Required
-        searchEngineId:'009217477393466868233:i5scrqug9fy', //Required
+        apiKey: '', //Required
+        searchEngineId:'', //Required
 		button: 'open-css',
 		placeholder: 'Search site',
 		background: '#f6f6f6;',
